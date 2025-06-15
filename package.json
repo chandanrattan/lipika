@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "main": "electron/main.js",
   "scripts": {
+    "all": "npm run format && npm run lint && npm run prepare && npm run test && npm run coverage-badge",
+    "coverage-badge": "make-coverage-badge --output-path ./coverage_badge.svg",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
     "react-start": "react-scripts start",
     "build": "react-scripts build",

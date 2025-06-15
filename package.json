@@ -1,0 +1,36 @@
+{
+  "name": "patra",
+  "version": "0.1.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-start": "npm run build && electron .",
+    "electron-pack": "electron-packager . PDFEditorMVP --overwrite --asar --platform=win32 --arch=x64 --out=release-build --prune=true --electron-version=28.1.0"
+  },
+  "dependencies": {
+    "electron": "^28.1.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "concurrently": "^8.2.0",
+    "wait-on": "^7.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.0",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

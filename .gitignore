@@ -404,3 +404,29 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+# Node.js
+node_modules/
+npm-debug.log*
+
+# React
+build/
+.env
+
+# Electron
+dist/
+out/
+*.asar
+
+# macOS/Linux/Windows
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Others
+*.local

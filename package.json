@@ -1,0 +1,45 @@
+{
+  "name": "patra",
+  "version": "0.1.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "all": "npm run format && npm run lint && npm run prepare && npm run test && npm run coverage-badge",
+    "coverage-badge": "make-coverage-badge --output-path ./coverage_badge.svg",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-start": "npm run build && electron .",
+    "electron-pack": "electron-packager . PDFEditorMVP --overwrite --asar --platform=win32 --arch=x64 --out=release-build --prune=true --electron-version=28.1.0"
+  },
+  "dependencies": {
+    "electron": "^28.1.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "concurrently": "^8.2.0",
+    "wait-on": "^7.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.0",
+    "react-scripts": "^5.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-github": "^4.10.2",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -24,7 +24,11 @@
   },
   "devDependencies": {
     "electron-packager": "^17.1.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-github": "^4.10.2",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3"
   },
   "browserslist": {
     "production": [
